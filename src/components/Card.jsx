@@ -2,7 +2,7 @@ import {React, useState, useEffect} from 'react';
 import { FiMapPin, FiClock } from 'react-icons/fi';
 const Card = ({ event }) => {
   const [timeLeft, setTimeLeft] = useState('');
-
+  
   useEffect(() => {
     const calcTimeLeft = () => {
       const eventDateTime = new Date(`${event.date}T${event.time}`);
@@ -19,7 +19,7 @@ const Card = ({ event }) => {
 
         timeLeftStr = `Event begins in : ${days}d ${hours}h ${minutes}min ${seconds}s`;
       } else {
-        timeLeftStr = 'Event Started';
+        timeLeftStr = 'Event Started/completed';
       }
 
       setTimeLeft(timeLeftStr);
@@ -32,19 +32,11 @@ const Card = ({ event }) => {
   }, [event.date, event.time]);
 
 
-  const getSportLogo = (sport) => {
-    switch (sport) {
-      case 'Football':
-        return '/football.png';
-      case 'Basketball':
-        return '/basketball.png';
-      case 'Cricket':
-        return '/cricket.png';
-      default:
-        return '/default.png';
-    }
+  const SportLogo = (sport) => {
+    const slug = sport.toLowerCase();
+    return `/${slug}.png`;
   };
-
+  
   return (
     <div className="mt-2 p-3 bg-gradient-to-r from-red-800 to-blue-900 shadow-lg rounded-xl overflow-hidden transition-all duration-200 transform hover:scale-105 border-black border flex items-center justify-between">
       <div>
@@ -61,7 +53,7 @@ const Card = ({ event }) => {
         {timeLeft}
       </div>
       </div>
-      <img src={getSportLogo(event.sport)} alt={event.sport} className="h-16 w-16 mx-4 rounded-full" />
+      <img src={SportLogo(event.sport)} alt={event.sport} className="h-16 w-16 mx-4 rounded-full" />
     </div>
   );
 };
