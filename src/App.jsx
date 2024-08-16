@@ -9,7 +9,7 @@ const App = () => {
     { sport: 'Basketball', teams: 'Team C vs Team D', date: '2024-08-21', time: '10:00', location: 'SAC' },
     { sport: 'Cricket', teams: 'Team E vs Team F', date: '2024-08-22', time: '08:00', location: 'Gymkhana' },
   ];
-
+  
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

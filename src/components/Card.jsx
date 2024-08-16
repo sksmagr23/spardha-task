@@ -46,7 +46,7 @@ const Card = ({ event }) => {
   };
 
   return (
-    <div className="mt-2 p-3 bg-gradient-to-r from-indigo-800 hover:bg-indigo-700 shadow-lg rounded-xl overflow-hidden transition-all duration-200 transform hover:scale-105 border-black border flex items-center justify-between">
+    <div className="mt-2 p-3 bg-gradient-to-r from-red-800 to-blue-900 shadow-lg rounded-xl overflow-hidden transition-all duration-200 transform hover:scale-105 border-black border flex items-center justify-between">
       <div>
       <h2 className="text-2xl mb-2 text-gray-200 font-extrabold">{event.teams}</h2>
       <div className="font-semibold flex items-center text-gray-300 mb-1">
@@ -57,7 +57,7 @@ const Card = ({ event }) => {
         <FiMapPin className="mr-1" />
         <span>{event.location}</span>
       </div>
-      <div className="text-yellow-400 font-medium text-sm">
+      <div className="text-yellow-300 font-medium text-sm">
         {timeLeft}
       </div>
       </div>
